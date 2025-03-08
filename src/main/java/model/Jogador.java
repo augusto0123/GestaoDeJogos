@@ -13,4 +13,8 @@ public class Jogador {
     public String toString(){
         return String.format("Jogador: %s | Pontuação: %d", this.nome, this.pontuacao);
     }
+
+    public int getPontuacao() {
+        return pontuacao;
+    }
 }
