@@ -3,6 +3,7 @@ package jogos;
 import model.Jogador;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Torneio {
@@ -25,19 +26,27 @@ public class Torneio {
 
     public void simularTorneio(){
         for (Jogador jogador : jogadores){
-            int pontos = random.nextInt(1) + 500;
+            int pontos = random.nextInt(401) + 100;
             jogador.adicionarPontuacao(pontos);
         }
     }
 
-    public void exibirRankingFinal(){
-        StringBuilder ranking = new StringBuilder("== RANKING FINAL DO TORNEIO: " + nome + "== \n");
-        for (int i = 0; i < jogadores.size(); i++){
-            ranking.append((i + 1)).append(" - ").append(jogadores.get(i)).append("\n");
+    public void exibirRankingFinal() {
+        // ordenação decrecente
+        jogadores.sort(Comparator.comparingInt(Jogador::getPontuacao).reversed());
+        StringBuilder ranking = new StringBuilder("\n== RANKING FINAL DO TORNEIO: " + nome + "== \n");
+        for (int i = 0; i < jogadores.size(); i++) {
+            ranking.append(i + 1).append(" - ").append(jogadores.get(i)).append("\n");
         }
-        ranking.append("\n VENCEDOR: ").append(jogadores.get(0));
+
+        // função para exibir o vencedor
+        Jogador vencedor = jogadores.get(0);
+
+        ranking.append("\n VENCEDOR: ").append(vencedor);
+
         System.out.println(ranking);
     }
+
 
 
 }
