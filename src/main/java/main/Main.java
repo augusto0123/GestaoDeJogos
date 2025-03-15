@@ -30,5 +30,7 @@ public class Main {
         TorneioPrincipal torneioPrincipal = new TorneioPrincipal("Torneio LDS I - 15/03");
         torneioPrincipal.adicionarJogador(new Jogador("Pedro", 500));
         torneioPrincipal.adicionarJogador(new Jogador("Carlos", 1000));
+
+        torneioPrincipal.exibirJogadores();
     }
 }

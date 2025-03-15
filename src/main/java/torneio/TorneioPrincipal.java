@@ -25,4 +25,9 @@ public class TorneioPrincipal {
         }
     }
 
+    public void exibirJogadores(){
+        System.out.println("\n=== Jogadores do Torneio - " + this.nome + " ===");
+        this.jogadors.forEach(jogador -> System.out.println(jogador.getNome()));
+    }
+
 }
