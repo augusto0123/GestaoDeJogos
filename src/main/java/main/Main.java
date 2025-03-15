@@ -2,6 +2,7 @@ package main;
 
 import jogos.Torneio;
 import model.Jogador;
+import torneio.TorneioPrincipal;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,5 +25,10 @@ public class Main {
         System.out.println("\n🔹 Iniciando " + torneio2 + "...");
         torneio2.simularTorneio();
         torneio2.exibirRankingFinal();
+
+        // Torneio do Andrey
+        TorneioPrincipal torneioPrincipal = new TorneioPrincipal("Torneio LDS I - 15/03");
+        torneioPrincipal.adicionarJogador(new Jogador("Pedro", 500));
+        torneioPrincipal.adicionarJogador(new Jogador("Carlos", 1000));
     }
 }

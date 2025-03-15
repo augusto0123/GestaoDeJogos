@@ -21,4 +21,8 @@ public class Jogador {
     public int getPontuacao() {
         return pontuacao;
     }
+
+    public String getNome() {
+        return nome;
+    }
 }
