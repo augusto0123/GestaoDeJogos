@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class TorneioPrincipal {
 
-    public String nome;
+    private String nome;
     private Set<Jogador> jogadors;
 
     public TorneioPrincipal(String nome){
@@ -30,4 +30,11 @@ public class TorneioPrincipal {
         this.jogadors.forEach(jogador -> System.out.println(jogador.getNome()));
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public Set<Jogador> getJogadors() {
+        return jogadors;
+    }
 }

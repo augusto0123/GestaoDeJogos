@@ -2,6 +2,7 @@ package main;
 
 import jogos.Torneio;
 import model.Jogador;
+import torneio.Estatistica;
 import torneio.TorneioPrincipal;
 
 public class Main {
@@ -28,9 +29,19 @@ public class Main {
 
         // Torneio do Andrey
         TorneioPrincipal torneioPrincipal = new TorneioPrincipal("Torneio LDS I - 15/03");
-        torneioPrincipal.adicionarJogador(new Jogador("Pedro", 500));
-        torneioPrincipal.adicionarJogador(new Jogador("Carlos", 1000));
+        torneioPrincipal.adicionarJogador(new Jogador("Pedro", 0));
+        torneioPrincipal.adicionarJogador(new Jogador("Carlos", 0));
 
         torneioPrincipal.exibirJogadores();
+
+        // Estatisticas
+        Estatistica estatistica = new Estatistica(torneioPrincipal);
+        estatistica.registrarPontuacao(new Jogador("Pedro", 0), 100);
+        estatistica.registrarPontuacao(new Jogador("Carlos", 0), 200);
+        estatistica.registrarPontuacao(new Jogador("Pedro", 0), 50);
+        estatistica.registrarPontuacao(new Jogador("Carlos", 0), 300);
+
+        estatistica.exibirPontuacoes();
+
     }
 }
